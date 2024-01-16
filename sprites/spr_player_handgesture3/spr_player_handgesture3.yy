@@ -109,8 +109,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "texture_peppino",
-    "path": "texturegroups/texture_peppino",
+    "name": "playergroup",
+    "path": "texturegroups/playergroup",
   },
   "type": 0,
   "VTile": false,

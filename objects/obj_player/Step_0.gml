@@ -417,6 +417,10 @@ with (obj_player)
     if (state == states.mach2 && (!instance_exists(obj_speedlines)))
         instance_create(x, y, obj_speedlines)
 }
+if (room == Realtitlescreen || room == Loadingroom || room == rank_room)
+{
+	state = states.titlescreen;
+}
 scr_collide_destructibles()
 if (state != states.titlescreen && state != states.door && state != states.Sjump && state != states.comingoutdoor && state != states.boulder && state != states.keyget && state != states.victory && state != states.portal && state != states.timesup && state != states.gottreasure && state != states.gameover)
     scr_collide_player()

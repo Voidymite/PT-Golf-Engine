@@ -1,3 +1,7 @@
+if (place_meeting(x,y,obj_exitgate))
+{
+	state = states.comingoutdoor;
+}
 if (state == states.grab)
 	state = states.normal
 	if (targetDoor == "A" && instance_exists(obj_doorA))

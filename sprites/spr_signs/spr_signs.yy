@@ -77,8 +77,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "texture_tilesets",
-    "path": "texturegroups/texture_tilesets",
+    "name": "tilegroup",
+    "path": "texturegroups/tilegroup",
   },
   "type": 0,
   "VTile": false,

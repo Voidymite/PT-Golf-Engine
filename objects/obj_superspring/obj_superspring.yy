@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Unused",
-    "path": "folders/Objects/Unused.yy",
+    "name": "Misc",
+    "path": "folders/Objects/Level Structure/Misc.yy",
   },
   "parentObjectId": null,
   "persistent": false,

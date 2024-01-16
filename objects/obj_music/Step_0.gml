@@ -6,12 +6,12 @@ if (jingle == 0)
     {
         switch room
         {
-            case hub_room1:
-                currentlyplaying = mu_ancientcheeseC
-                break
+			// add a new case statement for every room
             case golf_room1:
-                currentlyplaying = mu_tutorial
-                break
+			{
+                currentlyplaying = mu_tutorial;
+                break;
+			}
         }
     }
 }

@@ -5,7 +5,6 @@
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_noisecrusher","path":"objects/obj_noisecrusher/obj_noisecrusher.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_pistolbullet","path":"objects/obj_pistolbullet/obj_pistolbullet.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
   ],
   "managed": true,

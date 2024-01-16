@@ -1,8 +1,8 @@
-if ((place_meeting(x, y, obj_player) && obj_player.attacking == 1) || place_meeting(x, y, obj_slaphitbox) || (place_meeting(x, y, obj_shotgunbullet) && sprite_index == spr_pizzaboxunopen))
+if ((place_meeting(x, y, obj_player)/* && obj_player.attacking == 1*/) || place_meeting(x, y, obj_slaphitbox) || (place_meeting(x, y, obj_shotgunbullet) && sprite_index == spr_pizzaboxunopen))
 {
     if (sprite_index == spr_pizzaboxunopen)
     {
-        scr_sound(sound_enemyslap)
+        scr_sound(sfx_enemystomp)
         image_index = 0
         instance_create(x, y, obj_bangeffect)
     }
@@ -19,7 +19,7 @@ if ((place_meeting(x, y, obj_player) && obj_player.attacking == 1) || place_meet
 if (sprite_index == spr_pizzaboxopen && floor(image_index) == 3 && createdpizza == 0)
 {
     createdpizza = 1
-    instance_create(x, y, obj_bigcollect)
+    instance_create(x, y, content)
 }
 if (sprite_index == spr_pizzaboxopen && floor(image_index) == 16)
     instance_destroy()

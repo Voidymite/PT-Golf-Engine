@@ -79,8 +79,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "texture_transformations",
-    "path": "texturegroups/texture_transformations",
+    "name": "transfogroup",
+    "path": "texturegroups/transfogroup",
   },
   "type": 0,
   "VTile": false,

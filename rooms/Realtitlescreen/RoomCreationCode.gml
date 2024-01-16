@@ -94,3 +94,11 @@ enum states
 	barrelmach2,
 	barrelmach3,
 }
+if (instance_exists(obj_player))
+{
+	with (obj_player)
+	{
+		targetRoom = golf_room1;
+		targetDoor = "A";
+	}
+}

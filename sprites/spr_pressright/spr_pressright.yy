@@ -67,8 +67,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "texture_oneroom",
-    "path": "texturegroups/texture_oneroom",
+    "name": "miscgroup",
+    "path": "texturegroups/miscgroup",
   },
   "type": 0,
   "VTile": false,

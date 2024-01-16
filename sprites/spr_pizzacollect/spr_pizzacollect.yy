@@ -69,8 +69,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "texture_common",
-    "path": "texturegroups/texture_common",
+    "name": "effectgroup",
+    "path": "texturegroups/effectgroup",
   },
   "type": 0,
   "VTile": false,
