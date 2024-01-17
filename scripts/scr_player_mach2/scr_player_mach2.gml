@@ -25,15 +25,15 @@ function scr_player_mach2()
 	{
 	    image_index = 0
 	    sprite_index = spr_secondjump1
-	    scr_sound(sound_jump)
+	    scr_sound(sfx_jump)
 	    vsp = -9
 	}
 	if grounded
 	{
-	    if (machpunchAnim == 0 && sprite_index != spr_mach && sprite_index != spr_player_mach3 && sprite_index != spr_player_machhit)
+	    if (machpunchAnim == 0 && sprite_index != spr_mach2 && sprite_index != spr_mach3 && sprite_index != spr_player_machhit)
 	    {
 	        if (sprite_index != spr_player_machhit)
-	            sprite_index = spr_mach
+	            sprite_index = spr_mach2
 	    }
 	    if (machpunchAnim == 1)
 	    {

@@ -26,14 +26,6 @@ if instance_exists(ID)
             hitboxcreate = 0
             instance_destroy(other.id)
         }
-        if (object_index == obj_noisecrusher)
-        {
-            if (state != 87)
-            {
-                hitboxcreate = 0
-                instance_destroy(other.id)
-            }
-        }
         if (object_index == obj_peasanto || object_index == obj_ninja || object_index == obj_pizzice)
         {
             if (state != states.charge)

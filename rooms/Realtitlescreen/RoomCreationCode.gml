@@ -94,11 +94,7 @@ enum states
 	barrelmach2,
 	barrelmach3,
 }
-if (instance_exists(obj_player))
-{
-	with (obj_player)
-	{
-		targetRoom = golf_room1;
-		targetDoor = "A";
-	}
-}
+room = golf_room1;
+obj_player.facehurt = 0
+obj_player.targetDoor = "A"
+obj_player.targetRoom = golf_room1;

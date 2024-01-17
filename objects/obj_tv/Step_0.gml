@@ -11,15 +11,13 @@ if (room == golf_room1)
 }
 if (showtext == 1)
 {
-    xi = (500 + random_range(1, -1))
-    if (yi > 500)
-        yi -= 5
+	if (drawalpha < 100)
+	    drawalpha += 0.5
 }
 if (showtext == 0)
 {
-    xi = (500 + random_range(1, -1))
-    if (yi < 600)
-        yi += 1
+	if (drawalpha > 0)
+	    drawalpha -= 0.5
 }
 if (!((obj_player.state == states.knightpep && obj_player.state == states.knightpepattack && obj_player.state == states.knightpepslopes)))
     once = 0
@@ -27,10 +25,19 @@ if (obj_player.y < 200 && obj_player.x > (room_width - 200))
     alpha = 0.5
 else
     alpha = 1
+if (global.collect > global.srank && shownranka == 0)
+{
+    image_speed = 0
+    message = "You got enough for rank A."
+    showtext = 1
+    alarm[0] = 200
+    tvsprite = spr_tvranka
+    shownranka = 1
+}
 if (global.collect > global.arank && shownranka == 0)
 {
     image_speed = 0
-    message = "YOU GOT ENOUGH FOR RANK A"
+    message = "You got enough for rank A."
     showtext = 1
     alarm[0] = 200
     tvsprite = spr_tvranka
@@ -39,7 +46,7 @@ if (global.collect > global.arank && shownranka == 0)
 else if (global.collect > global.brank && shownrankb == 0)
 {
     image_speed = 0
-    message = "YOU GOT ENOUGH FOR RANK B"
+    message = "You got enough for rank B."
     showtext = 1
     alarm[0] = 200
     tvsprite = spr_tvrankb
@@ -48,7 +55,7 @@ else if (global.collect > global.brank && shownrankb == 0)
 else if (global.collect > global.crank && shownrankc == 0)
 {
     image_speed = 0
-    message = "YOU GOT ENOUGH FOR RANK C"
+    message = "You got enough for rank C."
     showtext = 1
     alarm[0] = 200
     tvsprite = spr_tvrankc
@@ -62,17 +69,6 @@ else if (obj_player.sprite_index == spr_player_levelcomplete)
     tvsprite = spr_tvclap
     once = 1
 }
-else if (obj_player.state == states.hurt)
-{
-    image_speed = 0.1
-    showtext = 1
-    if (chose == 0)
-        message = choose("OW!", "OUCH!", "OH!", "WOH!")
-    alarm[0] = 50
-    chose = 1
-    tvsprite = spr_tvhurt
-    once = 1
-}
 else if (obj_player.state == states.timesup)
 {
     alarm[0] = 50
@@ -84,30 +80,13 @@ else if (global.hurtcounter >= global.hurtmilestone)
     alarm[0] = 150
     image_speed = 0.1
     if (obj_player.character == "P")
-        character = "PEPPINO"
+        character = "Peppino"
     else
-        character = "THE NOISE"
-    message = (((("YOU HAVE HURT " + string(character)) + " ") + string(global.hurtmilestone)) + " TIMES...")
+        character = "The Noise"
+    message = (((("You have hurt " + string(character)) + " ") + string(global.hurtmilestone)) + " times...")
     if (tvsprite != spr_tvtalking1 && tvsprite != spr_tvtalking2 && tvsprite != spr_tvtalking3 && tvsprite != spr_tvtalking4)
         tvsprite = choose(spr_tvtalking1, spr_tvtalking2, spr_tvtalking3, spr_tvtalking4)
-    global.hurtmilestone += 3
-}
-else if (obj_player.state == states.skateboard)
-{
-    showtext = 1
-    message = "SWEET DUDE!!"
-    alarm[0] = 50
-    tvsprite = spr_tvrad
-    once = 1
-}
-else if (obj_player.state == states.slipnslide)
-{
-    image_speed = 0.1
-    showtext = 1
-    message = "OOPS!!"
-    alarm[0] = 50
-    tvsprite = spr_tvbanana
-    once = 1
+    global.hurtmilestone += 5
 }
 else if (global.combo != 0 && global.combotime != 0 && (tvsprite == spr_tvdefault || tvsprite == spr_tvcombo || tvsprite == spr_tvescape))
 {
@@ -128,19 +107,4 @@ else if (global.panic == 1)
 {
     image_speed = 0.1
     tvsprite = spr_tvescape
-}
-if (obj_player.state == states.keyget)
-{
-    showtext = 1
-    message = "NOW GO TO THE NEXT FLOOR!!"
-    alarm[0] = 50
-}
-if instance_exists(obj_noise_pushbutton)
-{
-    if (obj_noise_pushbutton.hsp != 0 && global.panic == 0)
-    {
-        showtext = 1
-        message = "UH OH..."
-        alarm[0] = 50
-    }
 }
