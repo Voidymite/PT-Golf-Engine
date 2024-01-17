@@ -29,7 +29,9 @@ function scr_characterspr()
 	        spr_keyget = spr_player_keyget
 	        spr_crouchslip = spr_player_crouchslip
 	        spr_mach1 = spr_player_mach1
-	        spr_mach = spr_player_mach
+	        spr_mach2 = spr_player_mach2
+			spr_mach3 = spr_player_mach3
+			spr_mach4 = spr_player_mach4
 	        spr_secondjump1 = spr_player_secondjump1
 	        spr_secondjump2 = spr_player_secondjump2
 	        spr_machslidestart = spr_player_machslidestart
@@ -77,6 +79,7 @@ function scr_characterspr()
 	        spr_piledriver = spr_player_piledriver
 	        spr_piledriverland = spr_player_piledriverland
 	        spr_charge = spr_player_charge
+			
 	        spr_palette = spr_peppalette
 	    }
 	    else

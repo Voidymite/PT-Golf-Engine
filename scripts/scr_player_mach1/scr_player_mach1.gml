@@ -50,6 +50,7 @@ function scr_player_mach1()
 	        movespeed = 10
 	        state = states.mach2
 	        instance_create(x, y, obj_jumpdust)
+			sprite_index = spr_mach2
 	    }
 	}
 	sprite_index = spr_mach1
@@ -76,7 +77,7 @@ function scr_player_mach1()
 	image_speed = 0.45
 	if (key_jump && grounded && key_attack)
 	{
-	    scr_sound(sound_jump)
+	    scr_sound(sfx_jump)
 	    sprite_index = spr_airdash1
 	    dir = xscale
 	    momemtum = 1
@@ -97,8 +98,6 @@ function scr_player_mach1()
 	    image_index = 0
 	    sprite_index = spr_suplexdash
 	    state = states.handstandjump
-	    if (character == "N")
-	        vsp = -5
 	}
 	else if (key_slap2 && key_down)
 	{

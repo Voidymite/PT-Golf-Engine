@@ -39,7 +39,7 @@ function scr_player_mach3()
 	    vsp = -9
 	}
 	if (sprite_index == spr_player_mach3jump && floor(image_index) == (image_number - 1))
-	    sprite_index = spr_player_mach4
+	    sprite_index = spr_player_mach3
 	if (movespeed > 20 && sprite_index != spr_player_crazyrun)
 	{
 	    flash = 1
@@ -164,7 +164,7 @@ function scr_player_mach3()
 	    state = states.shotgun
 	    image_index = 0
 	}
-	if (sprite_index == spr_player_mach4)
+	if (sprite_index == spr_player_mach3)
 	    image_speed = 0.4
 	if (sprite_index == spr_player_crazyrun)
 	    image_speed = 0.75

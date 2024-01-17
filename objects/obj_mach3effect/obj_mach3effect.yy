@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_player_mach",
-    "path": "sprites/spr_player_mach/spr_player_mach.yy",
+    "name": "spr_player_mach2",
+    "path": "sprites/spr_player_mach2/spr_player_mach2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

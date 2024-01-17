@@ -32,12 +32,12 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_pizzacollect",
-    "path": "sprites/spr_pizzacollect/spr_pizzacollect.yy",
+    "name": "spr_pizzacollect1",
+    "path": "sprites/spr_pizzacollect1/spr_pizzacollect1.yy",
   },
   "spriteMaskId": {
-    "name": "spr_pizzacollect",
-    "path": "sprites/spr_pizzacollect/spr_pizzacollect.yy",
+    "name": "spr_pizzacollect1",
+    "path": "sprites/spr_pizzacollect1/spr_pizzacollect1.yy",
   },
   "visible": true,
 }
