@@ -31,10 +31,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_crushershockwave",
-    "path": "sprites/spr_crushershockwave/spr_crushershockwave.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

@@ -29,14 +29,16 @@ function scr_player_normal()
 	        }
 	        if (idle >= 300 && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3)
 	        {
+				if (irandom(100) <= 50)
+                    scr_sound(choose(sfx_enemystomp, sound_enemythrow))
 	            randomise()
 	            idleanim = random_range(0, 100)
 	            if (idleanim <= 33)
-	                sprite_index = spr_idle1
+	                sprite_index = choose(spr_idle1,spr_idle2)
 	            else if (idleanim > 33 && idleanim < 66)
-	                sprite_index = spr_idle2
+	                sprite_index = choose(spr_idle3,spr_idle4)
 	            else if (idleanim > 66)
-	                sprite_index = spr_idle3
+	                sprite_index = choose(spr_idle5,spr_idle6)
 	            image_index = 0
 	        }
 	        if (idle < 300)
@@ -238,7 +240,7 @@ function scr_player_normal()
 	    if (character == "N")
 	        vsp = -5
 	}
-	else if (key_slap2 && key_down)
+	else if (key_slap2)
 	{
 	    taunttimer = 20
 	    tauntstoredmovespeed = movespeed
@@ -249,34 +251,13 @@ function scr_player_normal()
 	    sprite_index = spr_player_taunt
 	    instance_create(x, y, obj_taunteffect)
 	}
-	if (key_shoot2 && (!key_up))
-	{
-	    sprite_index = spr_player_pistol
-	    state = states.pistol
-	    image_index = 0
-	    shoot = 1
-	}
-	else if (key_up && key_shoot2 && move == 0)
-	{
-	    sprite_index = spr_player_shootup
-	    state = states.pistol
-	    image_index = 0
-	    shoot = 1
-	}
-	else if (key_up && key_shoot2 && move != 0)
-	{
-	    sprite_index = spr_player_shootdiagonal
-	    state = states.pistol
-	    image_index = 0
-	    shoot = 1
-	}
 	if ((!instance_exists(obj_cloudeffect)) && grounded && move != 0 && (floor(image_index) == 4 || floor(image_index) == 10))
 	    instance_create(x, (y + 43), obj_cloudeffect)
-	if ((!instance_exists(obj_cloudeffect)) && grounded && move != 0 && (sprite_index == spr_player_downslopes || sprite_index == spr_player_upslopes))
+	if ((!instance_exists(obj_cloudeffect)) && grounded && move != 0)
 	    instance_create(x, (y + 43), obj_cloudeffect)
 	if (move != 0 && (floor(image_index) == 3 || floor(image_index) == 8) && steppy == 0)
 	{
-	    scr_sound(sound_step)
+	    scr_sound(choose(sfx_step,sfx_step2))
 	    steppy = 1
 	}
 	if (move != 0 && floor(image_index) != 3 && floor(image_index) != 8)

@@ -9,29 +9,11 @@ with (obj_player)
         case states.titlescreen:
             scr_player_titlescreen()
             break
-        case states.hookshot:
-            scr_playerN_hookshot()
-            break
         case states.slap:
             scr_player_slap()
             break
         case states.charge:
             scr_player_charge()
-            break
-        case states.cheesepep:
-            scr_player_cheesepep()
-            break
-        case states.cheeseball:
-            scr_player_cheeseball()
-            break
-        case states.cheesepepstick:
-            scr_player_cheesepepstick()
-            break
-        case states.boxxedpep:
-            scr_player_boxxedpep()
-            break
-        case states.pistolaim:
-            scr_player_pistolaim()
             break
         case states.climbwall:
             scr_player_climbwall()
@@ -41,12 +23,6 @@ with (obj_player)
             break
         case states.portal:
             scr_player_portal()
-            break
-        case states.secondjump:
-            scr_player_secondjump()
-            break
-        case states.chainsawbump:
-            scr_player_chainsawbump()
             break
         case states.handstandjump:
             scr_player_handstandjump()
@@ -60,29 +36,17 @@ with (obj_player)
         case states.knightpepattack:
             scr_player_knightpepattack()
             break
-        case states.meteorpep:
-            scr_player_meteorpep()
-            break
         case states.bombpep:
             scr_player_bombpep()
             break
         case states.grabbing:
             scr_player_grabbing()
             break
-        case states.chainsawpogo:
-            scr_player_chainsawpogo()
-            break
         case states.shotgunjump:
             scr_player_shotgunjump()
             break
         case states.stunned:
             scr_player_stunned()
-            break
-        case states.highjump:
-            scr_player_highjump()
-            break
-        case states.chainsaw:
-            scr_player_chainsaw()
             break
         case states.facestomp:
             scr_player_facestomp()
@@ -111,9 +75,6 @@ with (obj_player)
         case states.slam:
             scr_player_slam()
             break
-        case states.skateboard:
-            scr_player_skateboard()
-            break
         case states.grind:
             scr_player_grind()
             break
@@ -140,12 +101,6 @@ with (obj_player)
             break
         case states.bossintro:
             scr_player_bossintro()
-            break
-        case states.smirk:
-            scr_player_smirk()
-            break
-        case states.pizzathrow:
-            scr_player_pizzathrow()
             break
         case states.gameover:
             scr_player_gameover()
@@ -228,30 +183,6 @@ with (obj_player)
         case states.door:
             scr_player_door()
             break
-        case states.barrelnormal:
-            scr_player_barrelnormal()
-            break
-        case states.barrelfall:
-            scr_player_barrelfall()
-            break
-        case states.barrelmach1:
-            scr_player_barrelmach1()
-            break
-        case states.barrelmach2:
-            scr_player_barrelmach2()
-            break
-        case states.barrelfloat:
-            scr_player_barrelfloat()
-            break
-        case states.barrelcrouch:
-            scr_player_barrelcrouch()
-            break
-        case states.barrelslipnslide:
-            scr_player_barrelslipnslide()
-            break
-        case states.barrelroll:
-            scr_player_barrelroll()
-            break
         case states.current:
             scr_player_current()
             break
@@ -322,13 +253,6 @@ with (obj_player)
     }
     if (obj_player.state != states.handstandjump)
         grav = 0.5
-    if (sprite_index == spr_player_idlevomit && image_index > 28 && image_index < 43)
-        instance_create((x + random_range(-5, obj_tv)), (y + 46), obj_vomit)
-    if (sprite_index == spr_player_idlevomitblood && image_index > 28 && image_index < 43)
-    {
-        with (instance_create((x + random_range(-5, obj_tv)), (y + 46), obj_vomit))
-            sprite_index = spr_vomit2
-    }
     if (global.playerhealth == 1 && (!instance_exists(obj_sweat)) && obj_player.state == states.normal)
         instance_create(x, y, obj_sweat)
     if (angry == 1 && (!instance_exists(obj_angrycloud)) && obj_player.state == states.normal)
@@ -347,7 +271,7 @@ with (obj_player)
         instance_create(random_range((x + 25), (x - 25)), random_range((y + 35), (y - 25)), obj_keyeffect)
     if (inv_frames == 0 && hurted == 0)
         image_alpha = 1
-    if (state == states.mach2 || state == states.charge || state == states.skateboard || state == states.knightpep || state == states.boxxedpep || state == states.cheesepep || state == states.knightpepslopes || state == states.knightpepattack || state == states.bombpep || state == states.facestomp || state == states.machfreefall || state == states.facestomp || state == states.machroll || state == states.mach3 || state == states.freefall || state == states.Sjump)
+    if (state == states.mach2 || state == states.charge || state == states.skateboard || state == states.knightpep || state == states.boxxedpep || state == states.knightpepslopes || state == states.knightpepattack || state == states.bombpep || state == states.facestomp || state == states.machfreefall || state == states.facestomp || state == states.machroll || state == states.mach3 || state == states.freefall || state == states.Sjump)
         attacking = 1
     else
         attacking = 0
@@ -355,7 +279,7 @@ with (obj_player)
         grabbing = 1
     else
         grabbing = 0
-    if (state == states.mach3 || state == states.hookshot || state == states.skateboard || state == 28 || state == states.freefall || state == states.Sjump || state == states.machroll || state == states.machfreefall || state == states.charge || (state == states.superslam && sprite_index == spr_piledriver) || state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.boxxedpep || state == states.cheesepep || state == states.cheeseball)
+    if (state == states.mach3 || state == states.hookshot || state == states.skateboard || state == states.freefall || state == states.Sjump || state == states.machroll || state == states.machfreefall || state == states.charge || (state == states.superslam && sprite_index == spr_piledriver) || state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.boxxedpep)
         instakillmove = 1
     else
         instakillmove = 0
@@ -396,13 +320,13 @@ with (obj_player)
     if (toomuchalarm1 > 0)
     {
         toomuchalarm1 -= 1
-        if (toomuchalarm1 <= 0 && (state == states.mach3 || state == states.hookshot || state == states.mach2 || state == states.charge || (state == states.machslide && mach2 >= 100) || state == states.machroll || state == states.handstandjump || (state == states.chainsaw && mach2 >= 100)))
+        if (toomuchalarm1 <= 0 && (state == states.mach3 || state == states.hookshot || state == states.mach2 || state == states.charge || (state == states.machslide && mach2 >= 100) || state == states.machroll || state == states.handstandjump))
         {
             instance_create(x, y, obj_mach3effect)
             toomuchalarm1 = 6
         }
     }
-    if (state != states.bump && state != states.crouch && state != states.boxxedpep && state != states.pistol && sprite_index != spr_player_crouchshoot && state != states.Sjumpprep && state != states.chainsaw && state != states.machroll && state != states.hurt && state != states.crouchslide && state != states.crouchjump)
+    if (state != states.bump && state != states.crouch && state != states.boxxedpep && state != states.pistol && state != states.Sjumpprep && state != states.chainsaw && state != states.machroll && state != states.hurt && state != states.crouchslide && state != states.crouchjump)
         mask_index = spr_player_mask
     else
         mask_index = spr_crouchmask
@@ -411,7 +335,7 @@ with (obj_player)
     else
         cutscene = 0
     if (state != states.hurt)
-        hurtsound = sound_pizzagot
+        hurtsound = sfx_bigtoppinggot
     if ((place_meeting(x, y, obj_door) || place_meeting(x, y, obj_keydoor) || (place_meeting(x, y, obj_exitgate) && global.panic == 1)) && (!instance_exists(obj_uparrow)) && scr_solid(x, (y + 1)) && state == states.normal)
         instance_create(x, y, obj_uparrow)
     if (state == states.mach2 && (!instance_exists(obj_speedlines)))

@@ -1,3 +1,11 @@
+
+/* 
+
+This decomp scraps the Pistol attack and replaces it entirely with just taunting. If you like it you may 
+un-comment out the code in obj_player_Step_0 and this script
+
+
+
 function scr_player_pistol()
 {
 	mach2 = 0

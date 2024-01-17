@@ -10,9 +10,7 @@ function scr_characterspr()
 	        spr_idle = spr_player_idle
 	        spr_hurt = spr_player_hurt
 	        spr_jump = spr_player_jump
-	        spr_jump2 = spr_player_jump2
 	        spr_fall = spr_player_fall
-	        spr_fall2 = spr_player_fall2
 	        spr_crouch = spr_player_crouch
 	        spr_crouchjump = spr_player_crouchjump
 	        spr_crouchfall = spr_player_crouchfall
@@ -40,9 +38,6 @@ function scr_characterspr()
 	        spr_machslideboost = spr_player_machslideboost
 	        spr_land2 = spr_player_land2
 	        spr_punch = spr_player_punch
-	        spr_backkick = spr_player_backkick
-	        spr_shoulder = spr_player_shoulder
-	        spr_uppunch = spr_player_uppunch
 	        spr_stomp = spr_player_stomp
 	        spr_stompprep = spr_player_stompprep
 	        spr_crouchslide = spr_player_crouchslide
@@ -74,12 +69,14 @@ function scr_characterspr()
 	        spr_keyget = spr_player_keyget
 	        spr_idle1 = spr_player_idlefrown
 	        spr_idle2 = spr_player_idledance
-	        spr_idle3 = spr_player_idlevomit
-	        spr_suplexdash = spr_player_suplexdash
+	        spr_idle3 = spr_player_handgesture1
+			spr_idle4 = spr_player_handgesture2
+			spr_idle5 = spr_player_handgesture3
+			spr_idle6 = spr_player_handgesture4
+	        spr_suplexdash = spr_player_grab
 	        spr_piledriver = spr_player_piledriver
 	        spr_piledriverland = spr_player_piledriverland
-	        spr_charge = spr_player_charge
-			
+	        spr_charge = spr_player_charge			
 	        spr_palette = spr_peppalette
 	    }
 	    else
@@ -123,7 +120,6 @@ function scr_characterspr()
 	        spr_hurt = spr_playerN_hurt
 	        spr_mach2jump = spr_playerN_mach2jump
 	        spr_Timesup = spr_playerN_timesup
-	        spr_deathstart = spr_playerN_deathstart
 	        spr_deathend = spr_playerN_deathend
 	        spr_machpunch1 = spr_playerN_machpunch1
 	        spr_machpunch2 = spr_playerN_machpunch2
@@ -144,10 +140,8 @@ function scr_characterspr()
 	        spr_idle1 = spr_playerN_idlegun
 	        spr_idle2 = spr_playerN_idlesmoke
 	        spr_idle3 = spr_playerN_idleface
-	        spr_suplexdash = spr_playerN_suplexdash
 	        spr_piledriver = spr_playerN_piledriver
 	        spr_piledriverland = spr_playerN_piledriverland
-	        spr_charge = spr_playerN_charge
 	        spr_palette = spr_noisepalette
 	    }
 	}

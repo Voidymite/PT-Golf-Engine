@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 2,
   "conversionMode": 0,
-  "duration": 159.75475,
+  "duration": 232.67265,
   "parent": {
     "name": "Music",
     "path": "folders/Sounds/Music.yy",
   },
   "preload": true,
   "sampleRate": 44100,
-  "soundFile": "mu_escape",
+  "soundFile": "mu_escape.wav",
   "type": 0,
-  "volume": 0.37,
+  "volume": 1.0,
 }

@@ -1,5 +1,4 @@
-if (global.collectsound == sound_suplex1)
-    scr_sound(sfx_collect)
+scr_sound(sfx_collect)
 global.collectsound = sfx_collect
 global.collect += 10
 global.pizzameter += 1

@@ -1,9 +1,7 @@
 image_speed = 0.1
-chose = 0
 message = ""
 showtext = 0
 tvsprite = spr_tvdefault
-noisesprite = spr_noiseHUD_idle
 xi = 500
 yi = 600
 drawalpha = 0

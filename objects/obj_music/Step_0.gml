@@ -1,7 +1,5 @@
 if (jingle == 0)
 {
-    if (room == Realtitlescreen)
-        currentlyplaying = mu_title
     if (global.panic == 0)
     {
         switch room
@@ -9,7 +7,7 @@ if (jingle == 0)
 			// add a new case statement for every room
             case golf_room1:
 			{
-                currentlyplaying = mu_tutorial;
+                currentlyplaying = mu_golf;
                 break;
 			}
         }

@@ -29,10 +29,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_shotgunpickup",
-    "path": "sprites/spr_shotgunpickup/spr_shotgunpickup.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }
