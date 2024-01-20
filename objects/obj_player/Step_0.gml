@@ -162,6 +162,9 @@ with (obj_player)
         case states.mach3:
             scr_player_mach3()
             break
+		case states.mach4:
+		   movespeed = 20
+		   state = states.mach3
         case states.machslide:
             scr_player_machslide()
             break
@@ -271,7 +274,7 @@ with (obj_player)
         instance_create(random_range((x + 25), (x - 25)), random_range((y + 35), (y - 25)), obj_keyeffect)
     if (inv_frames == 0 && hurted == 0)
         image_alpha = 1
-    if (state == states.mach2 || state == states.charge || state == states.skateboard || state == states.knightpep || state == states.boxxedpep || state == states.knightpepslopes || state == states.knightpepattack || state == states.bombpep || state == states.facestomp || state == states.machfreefall || state == states.facestomp || state == states.machroll || state == states.mach3 || state == states.freefall || state == states.Sjump)
+    if (state == states.mach2 || state == states.charge || state == states.knightpep || state == states.knightpepslopes || state == states.knightpepattack || state == states.facestomp || state == states.facestomp || state == states.machroll || state == states.mach3 || state == states.freefall || state == states.Sjump)
         attacking = 1
     else
         attacking = 0
@@ -279,7 +282,7 @@ with (obj_player)
         grabbing = 1
     else
         grabbing = 0
-    if (state == states.mach3 || state == states.hookshot || state == states.skateboard || state == states.freefall || state == states.Sjump || state == states.machroll || state == states.machfreefall || state == states.charge || (state == states.superslam && sprite_index == spr_piledriver) || state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.boxxedpep)
+    if (state == states.mach3 || state == states.freefall || state == states.Sjump || state == states.machroll || state == states.charge || (state == states.superslam && sprite_index == spr_piledriver) || state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes)
         instakillmove = 1
     else
         instakillmove = 0
@@ -298,7 +301,7 @@ with (obj_player)
         idle = 0
         dashdust = 0
     }
-    if (state != states.mach1 && state != states.jump && state != states.hookshot && state != states.handstandjump && state != states.normal && state != states.mach2 && state != states.mach3 && state != states.freefallprep && state != states.knightpep && state != states.shotgun && state != states.knightpepslopes)
+    if (state != states.mach1 && state != states.jump && state != states.handstandjump && state != states.normal && state != states.mach2 && state != states.mach3 && state != states.freefallprep && state != states.knightpep && state != states.shotgun && state != states.knightpepslopes)
         momemtum = 0
     if (state != states.Sjump && state != states.Sjumpprep)
         a = 0
@@ -312,7 +315,7 @@ with (obj_player)
         ladderbuffer = 0
     if (state != states.jump)
         stompAnim = 0
-    if ((state == states.mach3 || state == states.mach2 || state == states.hookshot || state == states.machroll || state == states.charge || state == states.handstandjump || (state == states.machslide && mach2 >= 100)) && (!instance_exists(obj_mach3effect)))
+    if ((state == states.mach3 || state == states.mach2 || state == states.machroll || state == states.charge || state == states.handstandjump || (state == states.machslide && mach2 >= 100)) && (!instance_exists(obj_mach3effect)))
     {
         toomuchalarm1 = 6
         instance_create(x, y, obj_mach3effect)
@@ -320,13 +323,13 @@ with (obj_player)
     if (toomuchalarm1 > 0)
     {
         toomuchalarm1 -= 1
-        if (toomuchalarm1 <= 0 && (state == states.mach3 || state == states.hookshot || state == states.mach2 || state == states.charge || (state == states.machslide && mach2 >= 100) || state == states.machroll || state == states.handstandjump))
+        if (toomuchalarm1 <= 0 && (state == states.mach3 || state == states.mach2 || state == states.charge || (state == states.machslide && mach2 >= 100) || state == states.machroll || state == states.handstandjump))
         {
             instance_create(x, y, obj_mach3effect)
             toomuchalarm1 = 6
         }
     }
-    if (state != states.bump && state != states.crouch && state != states.boxxedpep && state != states.pistol && state != states.Sjumpprep && state != states.chainsaw && state != states.machroll && state != states.hurt && state != states.crouchslide && state != states.crouchjump)
+    if (state != states.bump && state != states.crouch && state != states.pistol && state != states.Sjumpprep && state != states.machroll && state != states.hurt && state != states.crouchslide && state != states.crouchjump)
         mask_index = spr_player_mask
     else
         mask_index = spr_crouchmask

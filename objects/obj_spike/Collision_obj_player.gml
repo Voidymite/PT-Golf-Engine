@@ -27,6 +27,7 @@ with (obj_player)
     }
     else if (state == states.bombpep && hurted == 0)
         instance_create(x, y, obj_bombexplosion)
+/*
     else if (state == states.boxxedpep)
     {
         scr_sound(sound_losetransformation)
@@ -50,6 +51,7 @@ with (obj_player)
         obj_player.flash = 1
         state = states.bump
     }
+
     else if (state == states.cheesepep || state == states.cheesepepstick)
     {
         scr_sound(sound_losetransformation)
@@ -72,6 +74,7 @@ with (obj_player)
         obj_player.flash = 1
         state = states.bump
     }
+*/ 
     else if (state != states.hurt && hurted == 0 && cutscene == 0 && state != states.bump)
     {
         scr_sound(sound_touchspike)

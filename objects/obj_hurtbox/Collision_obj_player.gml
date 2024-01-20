@@ -6,15 +6,9 @@ with (obj_player)
     else if (state == states.bombpep && hurted == 0)
     {
     }
-    else if (state == states.boxxedpep)
-    {
-    }
-    else if (state == states.cheesepep || state == states.cheesepepstick)
-    {
-    }
     else if (state != states.hurt && hurted == 0 && cutscene == 0 && state != states.bump)
     {
-        scr_sound(sound_touchspike)
+        scr_sound(sfx_pephurt)
         global.hurtcounter += 1
         alarm[8] = 60
         alarm[7] = 120

@@ -1,4 +1,4 @@
-if (obj_player.state == states.cheeseball)
+/* if (obj_player.state == states.cheeseball)
 {
     with (obj_player)
     {

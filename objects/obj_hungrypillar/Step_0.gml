@@ -1,4 +1,5 @@
-if (obj_player.state == states.pizzathrow)
+var bbbbb = 0
+if (bbbbb == 1)
 {
     if (framereset == 0)
     {
@@ -18,20 +19,3 @@ else
 }
 if (toppineaten == 5)
     sprite_index = spr_hungrypillar_happy
-if (place_meeting((x + 1), y, obj_player) && sprite_index != spr_hungrypillar_happy)
-{
-    obj_tv.message = "STEP BACK!!"
-    obj_tv.showtext = 1
-    obj_tv.tvsprite = spr_tvpillar
-    obj_tv.alarm[0] = 150
-    obj_tv.image_speed = 0.1
-    sprite_index = spr_hungrypillar_angry
-    with (obj_player)
-    {
-        xscale = (-other.image_xscale)
-        state = states.bump
-        hsp = ((-xscale) * 10)
-        vsp = -6
-        image_index = 0
-    }
-}

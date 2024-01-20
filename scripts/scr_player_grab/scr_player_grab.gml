@@ -14,13 +14,11 @@ function scr_player_grab()
 	image_speed = 0.35
 	if (key_slap2 && suplexhavetomash <= 0)
 	{
-	    scr_sound(sound_slapswipe1)
 	    hsp = 0
 	    movespeed = 0
 	    state = states.Throw
 	    image_index = 0
 	    image_speed = 0.35
-	    scr_sound(sound_enemyslap)
 	}
 	if key_attack2
 	{
@@ -29,37 +27,30 @@ function scr_player_grab()
 	}
 	if (move == xscale)
 	{
-	    scr_sound(sound_suplex1)
 	    hsp = 0
 	    movespeed = 0
 	    state = states.punch
 	    image_index = 1
 	    image_speed = 0.35
-	    scr_sound(sound_enemyslap)
 	}
 	if (move == (-xscale))
 	{
-	    scr_sound(sound_suplex1)
 	    hsp = 0
 	    movespeed = 0
 	    state = states.backkick
 	    image_index = 1
 	    image_speed = 0.35
-	    scr_sound(sound_enemyslap)
 	}
 	if key_up
 	{
-	    scr_sound(sound_suplex1)
 	    hsp = 0
 	    movespeed = 0
 	    state = states.uppunch
 	    image_index = 1
 	    image_speed = 0.35
-	    scr_sound(sound_enemyslap)
 	}
 	if key_down
 	{
-	    scr_sound(sound_suplex1)
 	    hsp = 0
 	    movespeed = 0
 	    state = states.shoulder

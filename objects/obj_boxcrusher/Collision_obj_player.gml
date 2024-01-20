@@ -7,12 +7,12 @@ if (sprite_index == spr_boxcrusher_fall)
 }
 if (sprite_index == spr_boxcrusher_land)
 {
-    other.state = states.boxxedpep
+/*    other.state = states.boxxedpep
     if (other.sprite_index != spr_boxxedpep_intro)
     {
         other.sprite_index = spr_boxxedpep_intro
         scr_sound(sound_touchspike)
-    }
+    }*/
     other.image_index = 0
     other.hsp = 0
     other.vsp = 0

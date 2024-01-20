@@ -27,10 +27,10 @@ function scr_player_normal()
 	            idle = 0
 	            image_index = 0
 	        }
-	        if (idle >= 300 && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3)
+	        if (idle >= 300 && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3 && sprite_index != spr_idle4 && sprite_index != spr_idle5 && sprite_index != spr_idle6)
 	        {
 				if (irandom(100) <= 50)
-                    scr_sound(choose(sfx_enemystomp, sound_enemythrow))
+                    scr_sound(choose(sfx_peppinoneutral1, sfx_peppinoneutral2, sfx_peppinoneutral3, sfx_peppinoneutral4))
 	            randomise()
 	            idleanim = random_range(0, 100)
 	            if (idleanim <= 33)
@@ -162,7 +162,7 @@ function scr_player_normal()
 	}
 	if (key_jump && grounded && (!key_down))
 	{
-	    scr_sound(sound_jump)
+	    scr_sound(sfx_jump)
 	    sprite_index = spr_jump
 	    if (shotgunAnim == 1)
 	        sprite_index = spr_shotgun_jump
@@ -174,7 +174,7 @@ function scr_player_normal()
 	}
 	if (grounded && input_buffer_jump < 8 && (!key_down) && (!key_attack) && vsp > 0)
 	{
-	    scr_sound(sound_jump)
+	    scr_sound(sfx_jump)
 	    sprite_index = spr_jump
 	    if (shotgunAnim == 1)
 	        sprite_index = spr_shotgun_jump
@@ -229,7 +229,7 @@ function scr_player_normal()
 	    image_speed = 0.35
 	if (key_slap2 && (!key_down) && suplexmove == 0 && shotgunAnim == 0)
 	{
-	    scr_sound(sound_slapswipe1)
+	    scr_sound(sfx_grab)
 	    instance_create(x, y, obj_slaphitbox)
 	    suplexmove = 1
 	    vsp = 0
@@ -237,10 +237,8 @@ function scr_player_normal()
 	    image_index = 0
 	    sprite_index = spr_suplexdash
 	    state = states.handstandjump
-	    if (character == "N")
-	        vsp = -5
 	}
-	else if (key_slap2)
+	else if (key_shoot)
 	{
 	    taunttimer = 20
 	    tauntstoredmovespeed = movespeed

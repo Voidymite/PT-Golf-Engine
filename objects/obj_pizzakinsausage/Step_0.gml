@@ -1,7 +1,5 @@
 if (room == rank_room || room == timesuproom)
     visible = false
-if (obj_player.state == states.pizzathrow)
-    visible = false
 if (global.sausagefollow == 1)
 {
     image_alpha = obj_player.image_alpha

@@ -11,8 +11,6 @@ function scr_player_crouchslide()
 	mask_index = spr_crouchmask
 	if (mach2 >= 35 && (!key_down) && (!(scr_solid((x + 27), (y - 32)))) && (!(scr_solid((x - 27), (y - 32)))) && (!(scr_solid(x, (y - 32)))) && (!(scr_solid(x, (y - 16)))) && key_attack && sprite_index != spr_player_shootslide)
 	{
-	    if (character == "P")
-	        sprite_index = spr_player_machhit
 	    mach2 = 35
 	    state = states.mach2
 	    if (movespeed < 10)

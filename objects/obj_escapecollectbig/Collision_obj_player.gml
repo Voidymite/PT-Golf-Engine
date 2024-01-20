@@ -2,8 +2,8 @@ if (cancollect)
 {
 	global.collect += 100
     instance_create(x, y, obj_100)
-    if (!audio_is_playing(sound_pizzagot))
-        scr_sound(sound_pizzagot)
+    if (!audio_is_playing(sfx_bigtoppinggot))
+        scr_sound(sfx_bigtoppinggot)
     instance_destroy()
 }
 else

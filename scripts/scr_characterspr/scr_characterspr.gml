@@ -30,6 +30,7 @@ function scr_characterspr()
 	        spr_mach2 = spr_player_mach2
 			spr_mach3 = spr_player_mach3
 			spr_mach4 = spr_player_mach4
+			spr_mach3jump = spr_player_mach3jump
 	        spr_secondjump1 = spr_player_secondjump1
 	        spr_secondjump2 = spr_player_secondjump2
 	        spr_machslidestart = spr_player_machslidestart
@@ -46,7 +47,6 @@ function scr_characterspr()
 	        spr_victory = spr_player_victory
 	        spr_hurt = spr_player_hurt
 	        spr_climbwall = spr_player_climbwall
-	        spr_grab = spr_player_grab
 	        spr_mach2jump = spr_player_mach2jump
 	        spr_Timesup = spr_player_timesup
 	        spr_deathstart = spr_player_deathstart
@@ -76,7 +76,8 @@ function scr_characterspr()
 	        spr_suplexdash = spr_player_grab
 	        spr_piledriver = spr_player_piledriver
 	        spr_piledriverland = spr_player_piledriverland
-	        spr_charge = spr_player_charge			
+	        spr_charge = spr_player_charge		
+			spr_taunt = spr_player_taunt
 	        spr_palette = spr_peppalette
 	    }
 	    else
@@ -105,9 +106,6 @@ function scr_characterspr()
 	        spr_machslideboost = spr_playerN_machslideboost
 	        spr_land2 = spr_playerN_land2
 	        spr_punch = spr_playerN_punch
-	        spr_backkick = spr_playerN_backkick
-	        spr_shoulder = spr_playerN_shoulder
-	        spr_uppunch = spr_playerN_uppunch
 	        spr_stomp = spr_playerN_stomp
 	        spr_stompprep = spr_playerN_stompprep
 	        spr_crouchslip = spr_playerN_crouchslip

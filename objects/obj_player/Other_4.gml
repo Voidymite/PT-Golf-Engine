@@ -1,10 +1,3 @@
-if (place_meeting(x,y,obj_exitgate))
-{
-	state = states.comingoutdoor;
-	sprite_index = spr_walkfront;
-	image_index = 0;
-	image_speed = 0.35;
-}
 if (state == states.grab)
 	state = states.normal
 	if (targetDoor == "A" && instance_exists(obj_doorA))

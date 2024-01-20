@@ -1,4 +1,4 @@
-if (global.playerhealth < 8 && obj_player.state != states.gameover)
+/*if (global.playerhealth < 8 && obj_player.state != states.gameover)
 {
     scr_sound(sound_points)
     global.playerhealth += 1

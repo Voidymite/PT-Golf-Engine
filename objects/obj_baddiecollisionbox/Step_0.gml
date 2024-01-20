@@ -26,7 +26,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
             }
             if (instance_exists(other.baddieID) && y < other.baddieID.y && attacking == 0 && state == states.jump && vsp > 0 && other.baddieID.vsp >= 0 && sprite_index != spr_stompprep)
             {
-                scr_sound(sound_stomp)
+                scr_sound(sfx_enemystomp)
                 suplexmove = 0
                 if (other.baddieID.object_index == obj_pizzaball)
                     global.golfhit += 1
@@ -72,7 +72,6 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
                 instance_create(x, (y - 50), obj_stompeffect)
                 other.baddieID.state = states.stun
                 other.baddieID.image_index = 0
-                scr_sound(sound_tackleenemy)
             }
             if (instance_exists(other.baddieID) && state == states.mach1)
             {
@@ -84,7 +83,6 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
                 instance_create(other.baddieID.x, other.baddieID.y, obj_baddiegibs)
                 other.baddieID.flash = 1
                 other.baddieID.hp -= 1
-                scr_sound(sound_tackleenemy)
                 instance_create(x, y, obj_bumpeffect)
                 other.baddieID.stunned = 200
                 if (x != other.baddieID.x)
@@ -120,7 +118,6 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
                 instance_create(other.baddieID.x, other.baddieID.y, obj_baddiegibs)
                 other.baddieID.flash = 1
                 other.baddieID.hp -= 1
-                scr_sound(sound_tackleenemy)
                 instance_create(x, y, obj_bumpeffect)
                 other.baddieID.vsp = -10
                 other.baddieID.hsp = xscale
@@ -146,7 +143,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
                     vsp = -5
                 }
             }
-            if (instance_exists(other.baddieID) && other.baddieID.state != states.charge && attacking == 0 && state != states.tackle && state != states.hurt && (!(y < other.baddieID.y)) && (!(y > other.baddieID.y)) && grabbing == 0 && other.baddieID.state != states.stun && state != states.handstandjump && state != states.hookshot)
+            if (instance_exists(other.baddieID) && other.baddieID.state != states.charge && attacking == 0 && state != states.tackle && state != states.hurt && (!(y < other.baddieID.y)) && (!(y > other.baddieID.y)) && grabbing == 0 && other.baddieID.state != states.stun && state != states.handstandjump)
             {
                 if (x != other.baddieID.x)
                 {

@@ -99,23 +99,15 @@ function scr_player_mach1()
 	    sprite_index = spr_suplexdash
 	    state = states.handstandjump
 	}
-	else if (key_slap2 && key_down)
+	if (key_shoot)
 	{
 	    taunttimer = 20
 	    tauntstoredmovespeed = movespeed
 	    tauntstoredsprite = sprite_index
 	    tauntstoredstate = state
 	    state = states.backbreaker
-	    image_index = random_range(0, 6)
+	    image_index = random_range(0, 7)
 	    sprite_index = spr_player_taunt
 	    instance_create(x, y, obj_taunteffect)
-	}
-	if key_shoot2
-	{
-	    vsp = -4
-	    sprite_index = spr_player_pistolair
-	    state = states.pistol
-	    image_index = 0
-	    shoot = 1
 	}
 }

@@ -20,8 +20,8 @@ function scr_player_freefallland()
 	    state = states.normal
 	if (floor(image_index) == (image_number - 1) && superslam > 30)
 	{
-	    state = states.machfreefall
-	    vsp = -7
+	    state = states.normal
+	    facehurt = 1
 	}
 	image_speed = 0.35
 }

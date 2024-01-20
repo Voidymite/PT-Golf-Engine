@@ -25,7 +25,7 @@ function scr_player_machslide()
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_machslideboost && mach2 != 0)
 	{
 	    movespeed = 10
-	    scr_sound(sound_maxspeed)
+	    scr_sound(sfx_mach2)
 	    momemtum = 1
 	    state = states.mach2
 	    image_index = 0
@@ -36,7 +36,7 @@ function scr_player_machslide()
 	{
 	    movespeed = 12
 	    sprite_index = spr_player_mach4
-	    scr_sound(sound_maxspeed)
+	    scr_sound(sfx_mach3)
 	    momemtum = 1
 	    state = states.mach3
 	    image_index = 0

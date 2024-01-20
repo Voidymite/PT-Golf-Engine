@@ -20,7 +20,7 @@ function scr_player_crouch()
 	}
 	if (key_jump && grounded && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))))
 	{
-	    scr_sound(sound_jump)
+	    scr_sound(sfx_jump)
 	    vsp = -8
 	    state = states.crouchjump
 	    movespeed = 4
@@ -65,24 +65,6 @@ function scr_player_crouch()
 	{
 	    xscale = move
 	    crouchAnim = 0
-	}
-	if (key_slap2 && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))))
-	{
-	    taunttimer = 20
-	    tauntstoredmovespeed = movespeed
-	    tauntstoredsprite = sprite_index
-	    tauntstoredstate = state
-	    state = states.backbreaker
-	    image_index = random_range(0, 6)
-	    sprite_index = spr_player_taunt
-	    instance_create(x, y, obj_taunteffect)
-	}
-	if key_shoot2
-	{
-	    sprite_index = spr_player_crouchshoot
-	    state = states.pistol
-	    image_index = 0
-	    shoot = 1
 	}
 	image_speed = 0.6
 }

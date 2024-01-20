@@ -1,6 +1,6 @@
 function scr_collide_destructibles()
 {
-	if (state == states.mach2 || state == states.mach3 || state == states.machroll || state == states.hookshot || state == states.knightpep)
+	if (state == states.mach2 || state == states.mach3 || state == states.machroll || state == states.knightpep)
 	{
 	    if place_meeting((x + hsp), y, obj_destructibles)
 	    {
@@ -8,7 +8,7 @@ function scr_collide_destructibles()
 	            instance_destroy()
 	    }
 	}
-	if (state == states.knightpep || state == states.superslam || state == states.hookshot)
+	if (state == states.knightpep || state == states.superslam)
 	{
 	    if place_meeting(x, (y + 1), obj_destructibles)
 	    {

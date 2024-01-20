@@ -55,6 +55,7 @@ enum states
     Sjumpprep,
 	Sjumpland,
     crouch,
+	machfreefall,
     crouchjump,
     crouchslide,
     mach1,
@@ -69,6 +70,7 @@ enum states
     hang,
     door,
 	Throw, // EPIC shoutout to dist for suggesting how to make gm not shit itself compiling this enum
+	
 }
 room = golf_room1;
 obj_player.facehurt = 0

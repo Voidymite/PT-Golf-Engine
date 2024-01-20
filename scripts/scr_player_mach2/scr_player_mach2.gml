@@ -30,9 +30,8 @@ function scr_player_mach2()
 	}
 	if grounded
 	{
-	    if (machpunchAnim == 0 && sprite_index != spr_mach2 && sprite_index != spr_mach3 && sprite_index != spr_player_machhit)
+	    if (machpunchAnim == 0 && sprite_index != spr_mach2 && sprite_index != spr_mach3)
 	    {
-	        if (sprite_index != spr_player_machhit)
 	            sprite_index = spr_mach2
 	    }
 	    if (machpunchAnim == 1)
@@ -74,7 +73,6 @@ function scr_player_mach2()
 	    input_buffer_jump = 0
 	if ((!key_attack) && grounded)
 	{
-	    scr_sound(sound_maximumspeedstop)
 	    sprite_index = spr_machslidestart
 	    state = states.machslide
 	    image_index = 0
@@ -103,7 +101,6 @@ function scr_player_mach2()
 	}
 	if (scr_solid((x + 1), y) && xscale == 1 && (!(place_meeting((x + 1), y, obj_slope))) && (!(place_meeting((x + 1), y, obj_destructibles))) && (grounded || place_meeting((x + sign(hsp)), y, obj_railv)))
 	{
-	    scr_sound(sound_suplex1)
 	    movespeed = 0
 	    state = states.bump
 	    hsp = -2.5
@@ -114,7 +111,6 @@ function scr_player_mach2()
 	}
 	if (scr_solid((x - 1), y) && xscale == -1 && (!(place_meeting((x - 1), y, obj_slope))) && (!(place_meeting((x - 1), y, obj_destructibles))) && (grounded || place_meeting((x + sign(hsp)), y, obj_railv)))
 	{
-	    scr_sound(sound_suplex1)
 	    movespeed = 0
 	    state = states.bump
 	    hsp = 2.5
@@ -153,27 +149,17 @@ function scr_player_mach2()
 	    image_index = 0
 	    sprite_index = spr_suplexdash
 	    state = states.handstandjump
-	    if (character == "N")
-	        vsp = -5
 	}
-	else if (key_slap2 && key_down)
+	if (key_shoot)
 	{
 	    taunttimer = 20
 	    tauntstoredmovespeed = movespeed
 	    tauntstoredsprite = sprite_index
 	    tauntstoredstate = state
 	    state = states.backbreaker
-	    image_index = random_range(0, 6)
+	    image_index = random_range(0, 7)
 	    sprite_index = spr_player_taunt
 	    instance_create(x, y, obj_taunteffect)
-	}
-	if key_shoot2
-	{
-	    vsp = -4
-	    sprite_index = spr_player_pistolair
-	    state = states.pistol
-	    image_index = 0
-	    shoot = 1
 	}
 	image_speed = 0.65
 }

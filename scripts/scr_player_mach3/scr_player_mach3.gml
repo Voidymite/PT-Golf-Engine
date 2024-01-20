@@ -18,8 +18,8 @@ function scr_player_mach3()
 	if (movespeed < 24 && move == xscale)
 	{
 	    movespeed += 0.05
-	    if (!instance_exists(obj_crazyruneffect))
-	        instance_create(x, y, obj_crazyruneffect)
+/*	    if (!instance_exists(obj_mach4effect))
+	        instance_create(x, y, obj_mach4effect) */
 	}
 	else if (movespeed > 12 && move != xscale)
 	    movespeed -= 0.05
@@ -33,25 +33,28 @@ function scr_player_mach3()
 	    jumpstop = 0
 	if (input_buffer_jump < 8 && grounded && (!((move == 1 && xscale == -1))) && (!((move == -1 && xscale == 1))) && key_attack)
 	{
-	    scr_sound(sound_jump)
+	    scr_sound(sfx_jump)
 	    image_index = 0
-	    sprite_index = spr_player_mach3jump
+	    sprite_index = spr_mach3jump
 	    vsp = -9
 	}
-	if (sprite_index == spr_player_mach3jump && floor(image_index) == (image_number - 1))
-	    sprite_index = spr_player_mach3
-	if (movespeed > 20 && sprite_index != spr_player_crazyrun)
+	if (sprite_index == spr_mach3jump && floor(image_index) == (image_number - 1))
+	    sprite_index = spr_mach3
+	if (movespeed > 20 && sprite_index != spr_player_mach4)
 	{
 	    flash = 1
-	    sprite_index = spr_player_crazyrun
+	    sprite_index = spr_player_mach4
 	}
-	if (sprite_index == spr_player_crazyrun && (!instance_exists(obj_crazyrunothereffect)))
-	    instance_create(x, y, obj_crazyrunothereffect)
+/*	if (sprite_index == spr_player_mach4 && (!instance_exists(obj_mach4othereffect)))
+	    instance_create(x, y, obj_mach4othereffect)
+		
+		object doesnt exist...
+		*/
 	if key_jump
 	    input_buffer_jump = 0
 	if (key_up && grounded)
 	{
-	    scr_sound(sound_superjumpcharge1)
+	    scr_sound(sfx_superjumpprep)
 	    sprite_index = spr_player_superjumpprep
 	    state = states.Sjumpprep
 	    hsp = 0
@@ -59,7 +62,6 @@ function scr_player_mach3()
 	}
 	if ((!key_attack) && grounded)
 	{
-	    scr_sound(sound_maximumspeedstop)
 	    sprite_index = spr_player_machslidestart
 	    state = states.machslide
 	    image_index = 0
@@ -89,7 +91,7 @@ function scr_player_mach3()
 	}
 	if (scr_solid((x + 1), y) && xscale == 1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (grounded || place_meeting((x + sign(hsp)), y, obj_railv)))
 	{
-	    scr_sound(sound_maximumspeedland)
+	    scr_sound(sfx_hitwall)
 	    with (obj_camera)
 	    {
 	        shake_mag = 20
@@ -119,7 +121,7 @@ function scr_player_mach3()
 	}
 	if (scr_solid((x - 1), y) && xscale == -1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (grounded || place_meeting((x + sign(hsp)), y, obj_railv)))
 	{
-	    scr_sound(sound_maximumspeedland)
+	    scr_sound(sfx_hitwall)
 	    with (obj_camera)
 	    {
 	        shake_mag = 20
@@ -164,9 +166,9 @@ function scr_player_mach3()
 	    state = states.shotgun
 	    image_index = 0
 	}
-	if (sprite_index == spr_player_mach3)
+	if (sprite_index == spr_mach3)
 	    image_speed = 0.4
-	if (sprite_index == spr_player_crazyrun)
+	if (sprite_index == spr_player_mach4)
 	    image_speed = 0.75
 	if (key_slap2 && (!key_down) && suplexmove == 0)
 	{
@@ -175,10 +177,10 @@ function scr_player_mach3()
 	    vsp = 0
 	    instance_create(x, y, obj_jumpdust)
 	    image_index = 0
-	    sprite_index = spr_player_suplexdash
+	    sprite_index = spr_suplexdash
 	    state = states.handstandjump
 	}
-	else if (key_slap2 && key_down)
+	if (key_shoot)
 	{
 	    taunttimer = 20
 	    tauntstoredmovespeed = movespeed
@@ -186,15 +188,7 @@ function scr_player_mach3()
 	    tauntstoredstate = state
 	    state = states.backbreaker
 	    image_index = random_range(0, 6)
-	    sprite_index = spr_player_taunt
+	    sprite_index = spr_taunt
 	    instance_create(x, y, obj_taunteffect)
-	}
-	if key_shoot2
-	{
-	    vsp = -4
-	    sprite_index = spr_player_pistolair
-	    state = states.pistol
-	    image_index = 0
-	    shoot = 1
 	}
 }

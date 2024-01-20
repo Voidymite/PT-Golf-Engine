@@ -2,7 +2,7 @@ if (sprite_index == spr_grabbiehand_fall)
 {
     with (obj_player)
     {
-        if (state == states.boxxedpep)
+/*       if (state == states.boxxedpep)
         {
             scr_sound(sound_losetransformation)
             with (instance_create(x, y, obj_boxxeddebris))
@@ -27,7 +27,7 @@ if (sprite_index == spr_grabbiehand_fall)
             instance_create(x, y, obj_slimedebris)
             instance_create(x, y, obj_slimedebris)
             instance_create(x, y, obj_slimedebris)
-        }
+        }*/
     }
     grav = 0
     vsp = 0
