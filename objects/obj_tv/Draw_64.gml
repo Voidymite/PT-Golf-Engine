@@ -16,6 +16,4 @@ if (tvsprite == spr_tvdefault)
 }
 if (global.combotime > 0)
     draw_text(832, 200, string_hash_to_newline(((string(global.hit) + " ") + "HIT")))
-else
-    global.hit = 0
 draw_text(832, 300, string_hash_to_newline(((string(global.golfhit) + " ") + "GOLF HIT")))

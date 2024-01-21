@@ -8,7 +8,7 @@ function scr_collide()
 	}
 	else
 	{
-	    while (true)
+	    repeat (abs(vsp))
 	    {
 	        if (!(scr_solid(x, (y + sign(vsp)))))
 	        {
@@ -28,7 +28,7 @@ function scr_collide()
 	}
 	else
 	{
-	    while (true)
+	    repeat (abs(hsp))
 	    {
 	        if (scr_solid((x + sign(hsp)), y) && (!(scr_solid((x + sign(hsp)), (y - 1)))))
 	            y--
