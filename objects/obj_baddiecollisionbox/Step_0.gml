@@ -97,12 +97,12 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
                 other.baddieID.state = states.stun
                 image_index = 0
                 state = states.tackle
-                if (other.baddieID.hp == 0 && other.baddieID.object_index != obj_boss)
+                if (other.baddieID.hp == 0)
                 {
                     instance_destroy(other.id)
                     instance_destroy(other.baddieID)
                 }
-                else if (other.baddieID.hp <= 0 && other.baddieID.object_index == obj_boss)
+                else if (other.baddieID.hp <= 0)
                 {
                     other.baddieID.thrown = 1
                     vsp = -5
@@ -132,12 +132,12 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
                     sprite_index = spr_mach2jump
                     vsp = -11
                 }
-                if (other.baddieID.hp == 0 && other.baddieID.object_index != obj_boss)
+                if (other.baddieID.hp == 0)
                 {
                     instance_destroy(other.baddieID)
                     instance_destroy(other.id)
                 }
-                else if (other.baddieID.hp <= 0 && other.baddieID.object_index == obj_boss)
+                else if (other.baddieID.hp <= 0)
                 {
                     other.baddieID.thrown = 1
                     vsp = -5
